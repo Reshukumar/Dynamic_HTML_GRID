@@ -233,19 +233,22 @@ var productList = [
 
     var container = document.getElementById("container");
 
-  for (var counter=0;counter<=productList.length;counter++){
+  for (var counter=0;counter<productList.length;counter++){
+
+    var currentProductList=productList[counter];
     
     var card = document.createElement('div');
+    card.classList.add('card');
     var a = document.createElement('a');
     a.href = '#';
     var img = document.createElement('img');
-    img.src='';
+    img.src=currentProductList.preview;
     var h3 = document.createElement('h3');
-    h3.innerText='';
+    h3.innerText=currentProductList.name;
     var h4 = document.createElement('h4');
-    h4.innerText='';
+    h4.innerText=currentProductList.brand;
     var h5 = document.createElement('h5');
-    h5.innerText='';
+    h5.innerText=currentProductList.price;
     card.appendChild(a);
     card.appendChild(img);
     card.appendChild(h3);
@@ -255,5 +258,3 @@ var productList = [
     container.appendChild(card);
 
    }
-
-   console.log("hello from js")
