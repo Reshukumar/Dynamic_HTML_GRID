@@ -232,10 +232,23 @@ var productList = [
     </div>*/
 
     var container = document.getElementById("container");
+    var clothing = document.createElement('div');
+    clothing.classList.add('clothing');
+    var h2 = document.createElement('h2');
+    h2.classList.add('title1');
+    h2.innerText='Clothing for Men and Women';
+    //clothing.appendChild(h2);
+    var accessories=document.createElement('div');
+    accessories.classList.add('accessories')
+    
+    container.appendChild(clothing);
+    container.appendChild(accessories);
+
 
   for (var counter=0;counter<productList.length;counter++){
 
     var currentProductList=productList[counter];
+    
     
     var card = document.createElement('div');
     card.classList.add('card');
@@ -248,13 +261,18 @@ var productList = [
     var h4 = document.createElement('h4');
     h4.innerText=currentProductList.brand;
     var h5 = document.createElement('h5');
-    h5.innerText=currentProductList.price;
+    h5.innerText=currentProductList.price,"rs";
     card.appendChild(a);
     card.appendChild(img);
     card.appendChild(h3);
     card.appendChild(h4);
     card.appendChild(h5);
 
-    container.appendChild(card);
+    if(currentProductList.isAccessory == false){
+      clothing.appendChild(card);
+    }
+    else{
+      accessories.appendChild(card);
+    }
 
    }
