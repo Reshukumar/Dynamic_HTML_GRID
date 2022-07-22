@@ -220,28 +220,25 @@ var productList = [
       "price": 14999
     }
   ];
-  /*<div class="card" id="1">
-        <a href="product.html?product_id=1">
-            <div class="img"><img src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg"></div>
-            <div class="details">
-                <h3>Men Navy Blue Solid Sweatshirt</h3>
-                <h4>United Colors of Benetton</h4>
-                <h5>Rs 2599</h5>
-            </div>
-        </a>
-    </div>*/
-
+    
     var container = document.getElementById("container");
     var clothing = document.createElement('div');
     clothing.classList.add('clothing');
     var h2 = document.createElement('h2');
+    console.log(h2)
     h2.classList.add('title1');
     h2.innerText='Clothing for Men and Women';
-    //clothing.appendChild(h2);
+    container.appendChild(h2);
     var accessories=document.createElement('div');
     accessories.classList.add('accessories')
     
     container.appendChild(clothing);
+    var heading2 = document.createElement('h2');
+    console.log(heading2)
+    heading2.classList.add('title2');
+    heading2.innerText='Accessories for men and women';
+    container.appendChild(heading2)
+    
     container.appendChild(accessories);
 
 
@@ -261,7 +258,7 @@ var productList = [
     var h4 = document.createElement('h4');
     h4.innerText=currentProductList.brand;
     var h5 = document.createElement('h5');
-    h5.innerText=currentProductList.price,"rs";
+    h5.innerText='Rs'+" "+currentProductList.price;
     card.appendChild(a);
     card.appendChild(img);
     card.appendChild(h3);
@@ -276,3 +273,4 @@ var productList = [
     }
 
    }
+
